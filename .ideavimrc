@@ -1,0 +1,61 @@
+set number
+set relativenumber
+set ignorecase
+set smartcase
+
+
+" Disable Space key in normal mode
+nnoremap <Space> <Nop>
+
+" Resize splits with arrows
+nnoremap <C-Up> :resize +2<CR>
+nnoremap <C-Down> :resize -2<CR>
+nnoremap <C-Left> :vertical resize +2<CR>
+nnoremap <C-Right> :vertical resize -2<CR>
+
+" Navigate buffers
+nnoremap <S-l> :bnext<CR>
+nnoremap <S-h> :bprevious<CR>
+
+" Visual mode
+" Move text up and down
+vnoremap <A-j> :m '>+1<CR>gv=gv
+vnoremap <A-k> :m '<-2<CR>gv=gv
+vnoremap p "_dP
+
+" Visual Block mode
+" Move text up and down
+xnoremap J :m '>+1<CR>gv-gv
+xnoremap K :m '<-2<CR>gv-gv
+xnoremap <A-j> :m '>+1<CR>gv-gv
+xnoremap <A-k> :m '<-2<CR>gv-gv
+
+" Navigate windows using Ctrl + h/j/k/l
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
+
+" Fuzzy find files (Search Everywhere)
+nnoremap <space>sf :action GotoFile<CR>
+" Grep (Find in Path)
+nnoremap <space>sg :action FindInPath<CR>
+
+" Copy and paste from clipboard
+nnoremap gy "+y
+nnoremap gp "+p
+
+" Remove conflicting mappings
+nunmap <
+nunmap >
+
+" Map 'jk' to escape insert mode
+inoremap jk <Esc>
+
+" Map Ctrl + j to switch to the next autocomplete suggestion
+inoremap <C-j> <C-n>
+
+" Map Ctrl + k to switch to the previous autocomplete suggestion
+inoremap <C-k> <C-p>
+
+Plug 'tpope/vim-commentary'
